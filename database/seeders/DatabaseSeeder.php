@@ -3,23 +3,21 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Usuario administrador para ver los contactos de la página de venta (/admin).
+        // Define ADMIN_EMAIL y ADMIN_PASSWORD en el .env antes de ejecutar el seeder.
+        if (env('ADMIN_EMAIL') && env('ADMIN_PASSWORD')) {
+            User::updateOrCreate(
+                ['email' => env('ADMIN_EMAIL')],
+                ['name' => 'Administrador', 'rol' => 'admin', 'password' => env('ADMIN_PASSWORD')],
+            );
+        }
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $this->call(DemoClinicaSeeder::class);
     }
 }
