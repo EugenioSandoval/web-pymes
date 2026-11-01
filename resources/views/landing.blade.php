@@ -133,7 +133,7 @@
             <div class="flex flex-col gap-5">
                 <h2 class="{{ $titulo }} text-4xl leading-tight sm:text-5xl">Lo que ve tu cliente.<br>Lo que ves tú.</h2>
                 <p class="text-lg leading-relaxed text-slate-300">Tu cliente entra a tu web, elige el servicio y reserva o pide una cotización. Tú lo ves al instante en tu panel, desde el computador o el celular.</p>
-                <img src="{{ Formato::foto(config('negocio.foto_portada'), 900) }}" alt="Trabajadora revisando pedidos en una tablet en el mostrador" loading="lazy" class="h-56 w-full rounded-2xl bg-tinta-2 object-cover">
+                <img src="{{ Formato::foto(config('negocio.foto_portada'), 900) }}" alt="Trabajadora atendiendo con la pantalla del mostrador" loading="lazy" class="aspect-[3/2] w-full rounded-2xl bg-tinta-2 object-cover">
             </div>
             <div class="flex items-end gap-4" aria-hidden="true">
                 <div class="hidden w-44 shrink-0 rounded-[1.75rem] border-[6px] border-slate-800 bg-white p-3.5 text-tinta sm:block">

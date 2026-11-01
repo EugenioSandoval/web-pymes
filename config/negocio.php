@@ -55,7 +55,7 @@ return [
     // Fotos de los rubros. Cada "foto" puede ser:
     //  - un número: el ID de una foto de Pexels (pexels.com/photo/...-ID/), gratis para uso comercial, o
     //  - una ruta dentro de public/, por ejemplo 'img/rubros/panaderia.jpg', para usar tus propias imágenes.
-    'foto_portada' => 6205523, // Trabajadora con tablet en el mostrador
+    'foto_portada' => 4473496, // Cajera usando la pantalla del mostrador (foto horizontal)
 
     // Rubros: los que tienen 'portada' => true aparecen con foto al lado del título (máximo 6).
     // 'antes', 'ahora' y 'resultado' alimentan la sección "Antes y después".
@@ -86,7 +86,7 @@ return [
         ],
         [
             'nombre' => 'Buses y transfers', 'corto' => 'Buses', 'icono' => 'bus', 'portada' => true,
-            'foto' => 5481705,
+            'foto' => 18470737, // Pasajeros subiendo a un bus en el terminal
             'detalle' => 'Venta y reserva de pasajes, cotizaciones de viajes especiales enviadas al cliente, conductores y flota.',
             'antes' => ['Pasajes vendidos solo en boletería o por teléfono', 'Cotizaciones de viajes especiales (paseos, empresas, matrimonios) hechas a mano y enviadas tarde', 'Asientos sobrevendidos o buses que salen con cupos vacíos', 'Turnos de conductores en planillas de papel', 'Pasajeros que no saben si quedan asientos'],
             'ahora' => ['Venta y reserva de pasajes en línea, con elección de asiento', 'Cotizaciones de viajes especiales generadas en minutos y enviadas al cliente por correo o WhatsApp', 'Cupos actualizados al instante', 'Turnos de conductores y estado de la flota en el panel', 'Confirmación automática al pasajero'],
