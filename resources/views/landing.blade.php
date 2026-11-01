@@ -10,7 +10,7 @@
 <header class="sticky top-0 z-40 border-b border-slate-100 bg-white/90 backdrop-blur">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <a href="#" class="flex items-center gap-2 font-semibold text-marca-900">
-            <span class="grid size-8 place-items-center rounded-lg bg-marca-600 text-sm font-bold text-white">WP</span>
+            <span class="grid size-8 place-items-center rounded-lg bg-marca-600 text-sm font-bold text-white">MD</span>
             {{ config('negocio.nombre') }}
         </a>
         <div class="hidden items-center gap-6 text-sm text-slate-600 md:flex">

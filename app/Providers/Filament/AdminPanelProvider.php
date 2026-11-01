@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Web Pymes · Admin')
+            ->brandName('Mostrador Digital · Admin')
             ->colors([
                 'primary' => Color::Teal,
             ])

@@ -1,6 +1,6 @@
-# Web Pymes Chillán
+# Mostrador Digital
 
-Página de venta para ofrecer páginas web y sistemas de gestión a pymes de Chillán. Hecha con Laravel 13, Tailwind CSS 4 y MySQL (o SQLite en local).
+Página de venta de Mostrador Digital: páginas web y sistemas de gestión para pymes de Chillán y Ñuble. Hecha con Laravel 13, Tailwind CSS 4 y MySQL (o SQLite en local).
 
 ## Qué tiene
 
@@ -18,7 +18,7 @@ Página de venta para ofrecer páginas web y sistemas de gestión a pymes de Chi
 Casi todo lo que cambia seguido está en `config/negocio.php`: nombre, WhatsApp, correo, ciudad, planes con sus precios y rubros. El nombre, WhatsApp, correo y ciudad también se pueden cambiar en el archivo `.env`:
 
 ```
-NEGOCIO_NOMBRE="Web Pymes Chillán"
+NEGOCIO_NOMBRE="Mostrador Digital"
 NEGOCIO_WHATSAPP=56912345678
 NEGOCIO_EMAIL=contacto@tudominio.cl
 NEGOCIO_CIUDAD="Chillán, Ñuble"

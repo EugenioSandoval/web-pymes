@@ -2,9 +2,9 @@
 
 // Datos de contacto de la página de venta. Se cambian en el archivo .env.
 return [
-    'nombre' => env('NEGOCIO_NOMBRE', 'Web Pymes Chillán'),
+    'nombre' => env('NEGOCIO_NOMBRE', 'Mostrador Digital'),
     'whatsapp' => env('NEGOCIO_WHATSAPP', '56900000000'), // formato internacional sin "+"
-    'email' => env('NEGOCIO_EMAIL', 'contacto@webpymes.cl'),
+    'email' => env('NEGOCIO_EMAIL', 'contacto@mostradordigital.cl'),
     'ciudad' => env('NEGOCIO_CIUDAD', 'Chillán, Ñuble'),
 
     // Paquetes que aparecen en la página. Precios en CLP, sin IVA.
