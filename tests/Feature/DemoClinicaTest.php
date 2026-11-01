@@ -38,6 +38,27 @@ class DemoClinicaTest extends TestCase
     {
         $this->get('/demo')->assertOk()->assertSee('Centro Kine Ñuble');
         $this->get('/demo/reservar')->assertOk();
+        $this->get('/demo/presupuesto')->assertOk();
+        foreach (array_keys(config('demo.especialidades')) as $slug) {
+            $this->get("/demo/especialidades/$slug")->assertOk();
+        }
+        $this->get('/demo/especialidades/no-existe')->assertNotFound();
+        $this->get('/demo/equipo/'.\App\Models\Profesional::first()->id)->assertOk();
+    }
+
+    public function test_presupuesto_web_crea_cotizacion_en_borrador(): void
+    {
+        $servicio = Servicio::where('nombre', 'Sesión de kinesiología')->first();
+
+        $this->post('/demo/presupuesto', [
+            'nombre' => 'Pedro Web', 'telefono' => '+56 9 1111 2222',
+            'servicios' => [$servicio->id => ['activo' => 1, 'cantidad' => 10]],
+        ])->assertRedirect('/demo/presupuesto')->assertSessionHas('cotizacion');
+
+        $cotizacion = \App\Models\Cotizacion::latest('id')->first();
+        $this->assertSame('borrador', $cotizacion->estado);
+        $this->assertSame('Pedro Web', $cotizacion->paciente->nombre);
+        $this->assertSame(10 * $servicio->precio * 0.9, (float) $cotizacion->total());
     }
 
     public function test_reserva_web_crea_cita_pendiente_y_no_permite_doble_reserva(): void

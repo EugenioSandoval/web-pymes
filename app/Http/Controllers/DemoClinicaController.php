@@ -22,6 +22,83 @@ class DemoClinicaController extends Controller
         ]);
     }
 
+    public function especialidad(string $slug)
+    {
+        $especialidad = config("demo.especialidades.$slug") ?? abort(404);
+        $servicios = Servicio::where('publico', true)->whereIn('nombre', $especialidad['servicios'])->orderBy('precio')->get();
+
+        return view('demo.especialidad', [
+            'especialidad' => $especialidad,
+            'servicios' => $servicios,
+            'profesionales' => Profesional::where('activo', true)
+                ->whereHas('servicios', fn ($q) => $q->whereIn('servicios.id', $servicios->pluck('id')))
+                ->get(),
+        ]);
+    }
+
+    public function profesional(Profesional $profesional)
+    {
+        abort_unless($profesional->activo, 404);
+        $profesional->load(['servicios' => fn ($q) => $q->where('publico', true)]);
+        $servicio = $profesional->servicios->first();
+
+        // Las 5 próximas horas libres, para mostrar disponibilidad real.
+        $proximas = $servicio
+            ? $this->proximosDias()->flatMap(fn (Carbon $dia) => $this->horasLibres($profesional, $servicio, $dia))->take(5)
+            : collect();
+
+        return view('demo.profesional', compact('profesional', 'servicio', 'proximas'));
+    }
+
+    public function presupuesto()
+    {
+        return view('demo.presupuesto', ['servicios' => Servicio::where('publico', true)->orderBy('nombre')->get()]);
+    }
+
+    /** Crea un presupuesto en borrador que recepción ve en el panel. */
+    public function guardarPresupuesto(Request $request)
+    {
+        $datos = $request->validate([
+            'nombre' => ['required', 'string', 'max:120'],
+            'telefono' => ['required', 'string', 'max:30'],
+            'email' => ['nullable', 'email', 'max:120'],
+            'prevision' => ['nullable', 'in:Fonasa,Isapre,Particular'],
+            'comentarios' => ['nullable', 'string', 'max:500'],
+            'servicios' => ['required', 'array'],
+            'servicios.*.activo' => ['nullable', 'boolean'],
+            'servicios.*.cantidad' => ['nullable', 'integer', 'min:1', 'max:30'],
+        ], ['servicios.required' => 'Marca al menos un servicio.'], ['telefono' => 'teléfono', 'email' => 'correo']);
+
+        $elegidos = collect($datos['servicios'])->filter(fn ($s) => ! empty($s['activo']));
+        $servicios = Servicio::where('publico', true)->whereIn('id', $elegidos->keys())->get();
+        if ($servicios->isEmpty()) {
+            return back()->withInput()->withErrors(['servicios' => 'Marca al menos un servicio.']);
+        }
+
+        $paciente = Paciente::where('telefono', $datos['telefono'])->first()
+            ?? Paciente::create(collect($datos)->only(['nombre', 'telefono', 'email', 'prevision'])->filter()->all());
+
+        $sesiones = $servicios->sum(fn ($s) => (int) ($elegidos[$s->id]['cantidad'] ?? 1));
+        $cotizacion = Cotizacion::create([
+            'paciente_id' => $paciente->id,
+            'fecha' => today(),
+            'valida_hasta' => today()->addDays(30),
+            'estado' => 'borrador',
+            'descuento_porcentaje' => $sesiones >= 10 ? 10 : 0,
+            'observaciones' => trim('Solicitada desde la web. '.($datos['comentarios'] ?? '')),
+        ]);
+        foreach ($servicios as $s) {
+            $cotizacion->items()->create([
+                'servicio_id' => $s->id,
+                'descripcion' => $s->nombre,
+                'cantidad' => (int) ($elegidos[$s->id]['cantidad'] ?? 1),
+                'precio_unitario' => $s->precio,
+            ]);
+        }
+
+        return redirect()->route('demo.presupuesto')->with('cotizacion', $cotizacion->numero);
+    }
+
     public function reservar(Request $request)
     {
         $servicios = Servicio::where('publico', true)->orderBy('nombre')->get();

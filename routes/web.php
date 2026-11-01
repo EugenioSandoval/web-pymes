@@ -16,6 +16,10 @@ Route::prefix('demo')->controller(DemoClinicaController::class)->group(function 
     Route::get('/reservar', 'reservar')->name('demo.reservar');
     Route::post('/reservar', 'guardarReserva')->middleware('throttle:10,1')->name('demo.reservar.guardar');
     Route::get('/reserva/{cita}', 'reservaLista')->name('demo.reserva-lista');
+    Route::get('/especialidades/{slug}', 'especialidad')->name('demo.especialidad');
+    Route::get('/equipo/{profesional}', 'profesional')->name('demo.profesional');
+    Route::get('/presupuesto', 'presupuesto')->name('demo.presupuesto');
+    Route::post('/presupuesto', 'guardarPresupuesto')->middleware('throttle:10,1')->name('demo.presupuesto.guardar');
     Route::get('/panel/cotizaciones/{cotizacion}/imprimir', 'imprimirCotizacion')
         ->middleware('auth')
         ->name('clinica.cotizacion.imprimir');
