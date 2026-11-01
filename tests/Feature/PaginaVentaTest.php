@@ -13,7 +13,7 @@ class PaginaVentaTest extends TestCase
 
     public function test_la_pagina_de_venta_carga(): void
     {
-        $this->get('/')->assertOk()->assertSee('Planes');
+        $this->get('/')->assertOk()->assertSee('Planes')->assertSee('Estamos en '.now()->year);
     }
 
     public function test_el_formulario_guarda_el_contacto(): void

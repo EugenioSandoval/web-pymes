@@ -52,6 +52,16 @@ return [
         ],
     ],
 
+    // Preguntas de la sección "¿Tu negocio ya está en internet?". Edítalas aquí.
+    'preguntas' => [
+        ['icono' => 'celular', 'pregunta' => '¿Todavía no tienes tu tienda en línea?', 'respuesta' => 'Vende las 24 horas, aunque tu local esté cerrado.'],
+        ['icono' => 'hoja', 'pregunta' => '¿Te buscan en Google y no encuentran tus productos ni servicios?', 'respuesta' => 'Muéstralos con fotos, precios y un botón directo a tu WhatsApp.'],
+        ['icono' => 'documento', 'pregunta' => '¿Las cotizaciones te llegan por todos lados y algunas se pierden?', 'respuesta' => 'Tus clientes cotizan en tu web y tú las respondes desde un solo panel.'],
+        ['icono' => 'check', 'pregunta' => '¿Anotas los pedidos en un cuaderno o en el chat?', 'respuesta' => 'Recibe, ordena y sigue cada pedido hasta la entrega.'],
+        ['icono' => 'calendario', 'pregunta' => '¿Tus clientes tienen que llamarte para pedir una hora?', 'respuesta' => 'Que reserven en línea y reciban su confirmación al instante.'],
+        ['icono' => 'usuarios', 'pregunta' => '¿No sabes cuánto vendiste este mes sin sacar la calculadora?', 'respuesta' => 'Mira ventas, clientes y pendientes en reportes simples.'],
+    ],
+
     // Fotos de los rubros. Cada "foto" puede ser:
     //  - un número: el ID de una foto de Pexels (pexels.com/photo/...-ID/), gratis para uso comercial, o
     //  - una ruta dentro de public/, por ejemplo 'img/rubros/panaderia.jpg', para usar tus propias imágenes.

@@ -72,6 +72,24 @@
         </div>
     </section>
 
+    {{-- Preguntas que hacen pensar al cliente --}}
+    <section id="preguntas" class="bg-tinta text-white">
+        <div class="mx-auto max-w-6xl px-4 py-16">
+            <h2 class="{{ $titulo }} max-w-3xl text-3xl leading-tight sm:text-5xl">Estamos en {{ now()->year }}. ¿Tu negocio ya está en internet?</h2>
+            <p class="mt-3 text-lg text-slate-300">Si respondes “sí” a alguna de estas preguntas, podemos ayudarte.</p>
+            <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                @foreach (config('negocio.preguntas') as $item)
+                    <div class="flex flex-col gap-3 rounded-2xl bg-tinta-2 p-6">
+                        <span class="grid size-10 place-items-center rounded-xl bg-naranja text-white"><x-icono :nombre="$item['icono']" class="size-5" /></span>
+                        <p class="text-lg font-semibold leading-snug">{{ $item['pregunta'] }}</p>
+                        <p class="text-slate-300"><span class="font-semibold text-naranja">Solución:</span> {{ $item['respuesta'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+            <a href="#contacto" class="mt-10 inline-block rounded-full bg-naranja px-6 py-3.5 font-semibold text-white hover:bg-naranja-oscuro">Quiero resolverlo</a>
+        </div>
+    </section>
+
     {{-- Antes y después --}}
     <section id="antes-despues" class="bg-arena py-20">
         <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4">
