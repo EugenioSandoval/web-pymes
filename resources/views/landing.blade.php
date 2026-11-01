@@ -34,7 +34,7 @@
         <div class="flex flex-col gap-6">
             <p class="text-sm font-semibold uppercase tracking-widest text-naranja-oscuro">Páginas web y sistemas para negocios de Ñuble</p>
             <h1 class="{{ $titulo }} text-[2.6rem] leading-[1.02] sm:text-6xl">Atiende mejor.<br>Ordena todo.<br>Vende también en línea.</h1>
-            <p class="max-w-xl text-lg leading-relaxed text-stone-600">Tu web para que te encuentren y reserven, y un panel simple para manejar clientes, equipo, cotizaciones y agenda. Hecho en {{ config('negocio.ciudad') }}, con soporte por WhatsApp.</p>
+            <p class="max-w-xl text-lg leading-relaxed text-stone-600">Desde una web sencilla para mostrar tus productos o servicios, hasta una plataforma completa para vender, agendar, cotizar y controlar la gestión de tu empresa. Hecho en {{ config('negocio.ciudad') }}, con soporte por WhatsApp.</p>
             <div class="flex flex-wrap gap-3">
                 <a href="{{ route('demo') }}" class="rounded-full bg-naranja px-6 py-3.5 font-semibold text-white hover:bg-naranja-oscuro">Ver un ejemplo funcionando</a>
                 <a href="#contacto" class="rounded-full border-[1.5px] border-tinta px-6 py-3.5 font-semibold hover:bg-arena">Pedir cotización</a>
