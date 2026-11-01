@@ -70,7 +70,7 @@ return [
         ],
         [
             'nombre' => 'Salud y kinesiología', 'corto' => 'Salud', 'icono' => 'salud', 'portada' => true,
-            'foto' => 20860595,
+            'foto' => 4266943, // Profesional mostrando una tablet al paciente
             'detalle' => 'Kinesiología, psicología, nutrición y consultas: reserva de horas, fichas y recordatorios.',
             'antes' => ['Recepción todo el día al teléfono agendando horas', 'Pacientes que no llegan y dejan horas vacías', 'Fichas en papel o en Excel repartidas en varios computadores', 'Planes y presupuestos cotizados a mano'],
             'ahora' => ['Reservas desde la web las 24 horas', 'Recordatorio al paciente antes de su hora', 'La ficha de cada paciente en un solo lugar', 'Cotizaciones en PDF en un minuto'],
@@ -87,10 +87,10 @@ return [
         [
             'nombre' => 'Buses y transfers', 'corto' => 'Buses', 'icono' => 'bus', 'portada' => true,
             'foto' => 5481705,
-            'detalle' => 'Horarios, venta y reserva de pasajes, conductores y flota.',
-            'antes' => ['Pasajes vendidos solo en boletería o por teléfono', 'Asientos sobrevendidos o buses que salen con cupos vacíos', 'Turnos de conductores en planillas de papel', 'Pasajeros que no saben si quedan asientos'],
-            'ahora' => ['Venta y reserva de pasajes en línea, con elección de asiento', 'Cupos actualizados al instante', 'Turnos de conductores y estado de la flota en el panel', 'Confirmación automática al pasajero'],
-            'resultado' => 'Buses más llenos y menos llamadas a la oficina.',
+            'detalle' => 'Venta y reserva de pasajes, cotizaciones de viajes especiales enviadas al cliente, conductores y flota.',
+            'antes' => ['Pasajes vendidos solo en boletería o por teléfono', 'Cotizaciones de viajes especiales (paseos, empresas, matrimonios) hechas a mano y enviadas tarde', 'Asientos sobrevendidos o buses que salen con cupos vacíos', 'Turnos de conductores en planillas de papel', 'Pasajeros que no saben si quedan asientos'],
+            'ahora' => ['Venta y reserva de pasajes en línea, con elección de asiento', 'Cotizaciones de viajes especiales generadas en minutos y enviadas al cliente por correo o WhatsApp', 'Cupos actualizados al instante', 'Turnos de conductores y estado de la flota en el panel', 'Confirmación automática al pasajero'],
+            'resultado' => 'Buses más llenos, más viajes especiales cerrados y menos llamadas.',
         ],
         [
             'nombre' => 'Talleres y servicios técnicos', 'corto' => 'Talleres', 'icono' => 'herramienta', 'portada' => true,
