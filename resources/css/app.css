@@ -12,6 +12,16 @@
     --color-marca-700: #12665a;
     --color-marca-900: #0b3a34;
     --color-acento: #f2a541;
+
+    /* Marca Mostrador Digital (página de venta) */
+    --font-titulo: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+    --font-texto: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    --color-tinta: #0f2c3a;
+    --color-tinta-2: #17394a;
+    --color-naranja: #e8572a;
+    --color-naranja-oscuro: #c2410c;
+    --color-naranja-suave: #fff1ea;
+    --color-arena: #f7f5f2;
 }
 
 html { scroll-behavior: smooth; }

@@ -10,9 +10,16 @@ class Formato
         return '$'.number_format((float) $monto, 0, ',', '.');
     }
 
-    /** URL de una foto de Pexels por su ID, en el ancho pedido. */
-    public static function foto(int $id, int $ancho = 800): string
+    /**
+     * URL de una foto: si es un número, es el ID de una foto de Pexels;
+     * si es texto, es una ruta dentro de public/ (por ejemplo 'img/rubros/panaderia.jpg').
+     */
+    public static function foto(int|string $foto, int $ancho = 800): string
     {
-        return "https://images.pexels.com/photos/{$id}/pexels-photo-{$id}.jpeg?auto=compress&cs=tinysrgb&w={$ancho}";
+        if (is_string($foto) && ! ctype_digit($foto)) {
+            return asset($foto);
+        }
+
+        return "https://images.pexels.com/photos/{$foto}/pexels-photo-{$foto}.jpeg?auto=compress&cs=tinysrgb&w={$ancho}";
     }
 }

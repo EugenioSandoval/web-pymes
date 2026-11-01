@@ -6,10 +6,10 @@
     <title>@yield('titulo', config('negocio.nombre').' | Páginas web y sistemas para pymes')</title>
     <meta name="description" content="Páginas web, reservas en línea y sistemas de gestión a medida para pymes de {{ config('negocio.ciudad') }}.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-white text-slate-800 antialiased">
+<body class="bg-white font-texto text-tinta antialiased">
     @yield('contenido')
 
     {{-- Botón flotante de WhatsApp --}}
