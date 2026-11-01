@@ -52,13 +52,17 @@ return [
         ],
     ],
 
+    // Fotos reales de Pexels (licencia gratuita, uso comercial permitido, sin atribución obligatoria).
+    // El número es el ID de la foto en pexels.com/photo/...-ID/. Para cambiar una foto, busca otra en Pexels y pega su ID.
+    'foto_portada' => 6205523, // Empleada con tablet en el mostrador de un café
+
     // Rubros que aparecen como ejemplos.
     'rubros' => [
-        ['nombre' => 'Salud', 'detalle' => 'Kinesiología, psicología, nutrición y consultas: reserva de horas, fichas y recordatorios.', 'icono' => 'salud'],
-        ['nombre' => 'Transporte de pasajeros', 'detalle' => 'Buses y transfers: horarios, reserva de pasajes, conductores y flota.', 'icono' => 'bus'],
-        ['nombre' => 'Servicios técnicos', 'detalle' => 'Talleres y mantenciones: cotizaciones, órdenes de trabajo e historial.', 'icono' => 'herramienta'],
-        ['nombre' => 'Estética y bienestar', 'detalle' => 'Peluquerías, barberías y spa: agenda en línea y catálogo de servicios.', 'icono' => 'tijera'],
-        ['nombre' => 'Panaderías y pastelerías', 'detalle' => 'Catálogo, pedidos por encargo para eventos y despacho.', 'icono' => 'pan'],
-        ['nombre' => 'Turismo y agro', 'detalle' => 'Cabañas y productores de Ñuble: reservas, catálogo y cotización por volumen.', 'icono' => 'hoja'],
+        ['nombre' => 'Salud', 'foto' => 20860595, 'detalle' => 'Kinesiología, psicología, nutrición y consultas: reserva de horas, fichas y recordatorios.', 'icono' => 'salud'],
+        ['nombre' => 'Transporte de pasajeros', 'foto' => 5481705, 'detalle' => 'Buses y transfers: horarios, reserva de pasajes, conductores y flota.', 'icono' => 'bus'],
+        ['nombre' => 'Servicios técnicos', 'foto' => 4116198, 'detalle' => 'Talleres y mantenciones: cotizaciones, órdenes de trabajo e historial.', 'icono' => 'herramienta'],
+        ['nombre' => 'Estética y bienestar', 'foto' => 7755223, 'detalle' => 'Peluquerías, barberías y spa: agenda en línea y catálogo de servicios.', 'icono' => 'tijera'],
+        ['nombre' => 'Panaderías y pastelerías', 'foto' => 36445004, 'detalle' => 'Catálogo, pedidos por encargo para eventos y despacho.', 'icono' => 'pan'],
+        ['nombre' => 'Turismo y agro', 'foto' => 7212851, 'detalle' => 'Cabañas y productores de Ñuble: reservas, catálogo y cotización por volumen.', 'icono' => 'hoja'],
     ],
 ];

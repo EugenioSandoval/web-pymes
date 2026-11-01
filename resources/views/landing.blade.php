@@ -67,8 +67,13 @@
 
     {{-- Qué hacemos --}}
     <section id="servicios" class="mx-auto max-w-6xl px-4 py-20">
-        <h2 class="text-3xl font-bold text-marca-900">Dos partes, un solo sistema</h2>
-        <p class="mt-3 max-w-2xl text-slate-600">Tus clientes ven una web pública clara y rápida. Tú y tu equipo usan un panel privado donde todo queda ordenado.</p>
+        <div class="grid items-center gap-8 md:grid-cols-2">
+            <div>
+                <h2 class="text-3xl font-bold text-marca-900">Dos partes, un solo sistema</h2>
+                <p class="mt-3 max-w-xl text-slate-600">Tus clientes ven una web pública clara y rápida. Tú y tu equipo usan un panel privado donde todo queda ordenado: menos papeles, menos llamadas y más tiempo para atender.</p>
+            </div>
+            <img src="{{ \App\Support\Formato::foto(config('negocio.foto_portada'), 900) }}" alt="Trabajadora revisando pedidos en una tablet en el mostrador" loading="lazy" class="h-64 w-full rounded-2xl bg-marca-100 object-cover shadow-sm">
+        </div>
         <div class="mt-10 grid gap-6 md:grid-cols-2">
             <div class="rounded-2xl border border-slate-200 p-6">
                 <h3 class="text-xl font-semibold text-marca-900">Web pública</h3>
@@ -96,10 +101,15 @@
             <p class="mt-3 max-w-2xl text-slate-600">Cada rubro trabaja distinto. Adaptamos el sistema a cómo funciona el tuyo.</p>
             <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 @foreach (config('negocio.rubros') as $rubro)
-                    <div class="rounded-2xl bg-white p-6 shadow-sm">
-                        <div class="grid size-11 place-items-center rounded-xl bg-marca-100 text-marca-700"><x-icono :nombre="$rubro['icono']" class="size-6" /></div>
-                        <h3 class="mt-4 font-semibold text-marca-900">{{ $rubro['nombre'] }}</h3>
-                        <p class="mt-2 text-sm text-slate-600">{{ $rubro['detalle'] }}</p>
+                    <div class="overflow-hidden rounded-2xl bg-white shadow-sm">
+                        <img src="{{ \App\Support\Formato::foto($rubro['foto'], 700) }}" alt="{{ $rubro['nombre'] }}" loading="lazy" class="h-48 w-full bg-marca-100 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center gap-3">
+                                <span class="grid size-9 place-items-center rounded-lg bg-marca-100 text-marca-700"><x-icono :nombre="$rubro['icono']" class="size-5" /></span>
+                                <h3 class="font-semibold text-marca-900">{{ $rubro['nombre'] }}</h3>
+                            </div>
+                            <p class="mt-3 text-sm text-slate-600">{{ $rubro['detalle'] }}</p>
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -243,6 +253,7 @@
 
 <footer class="border-t border-slate-100 py-8 text-center text-sm text-slate-500">
     © {{ date('Y') }} {{ config('negocio.nombre') }} · {{ config('negocio.ciudad') }}
+    <span class="mt-1 block text-xs text-slate-400">Fotografías: <a href="https://www.pexels.com" class="hover:underline" rel="noopener">Pexels</a></span>
 </footer>
 
 <script>

@@ -13,13 +13,16 @@
                 <a href="#servicios" class="rounded-full border border-marca-600 px-6 py-3 font-semibold text-marca-700 hover:bg-marca-50">Ver servicios</a>
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-            @foreach ([['+2.000', 'pacientes atendidos'], ['4', 'profesionales'], ['4,9 ★', 'valoración en Google'], ['24/7', 'reservas en línea']] as [$numero, $texto])
-                <div class="rounded-2xl bg-white p-6 text-center shadow-sm ring-1 ring-slate-100">
-                    <p class="text-3xl font-bold text-marca-700">{{ $numero }}</p>
-                    <p class="mt-1 text-sm text-slate-500">{{ $texto }}</p>
-                </div>
-            @endforeach
+        <div class="relative">
+            <img src="{{ \App\Support\Formato::foto(20860588, 1000) }}" alt="Kinesiología: paciente haciendo ejercicios de pierna con apoyo profesional" class="h-80 w-full rounded-3xl bg-marca-100 object-cover shadow-lg md:h-96">
+            <div class="absolute -bottom-6 left-4 right-4 grid grid-cols-3 gap-3 sm:left-8 sm:right-8">
+                @foreach ([['+2.000', 'pacientes'], ['4,9 ★', 'en Google'], ['24/7', 'reservas en línea']] as [$numero, $texto])
+                    <div class="rounded-2xl bg-white p-3 text-center shadow-md ring-1 ring-slate-100">
+                        <p class="text-xl font-bold text-marca-700">{{ $numero }}</p>
+                        <p class="text-xs text-slate-500">{{ $texto }}</p>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </section>
