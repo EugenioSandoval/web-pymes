@@ -78,7 +78,7 @@ return [
         ],
         [
             'rubro' => 'Buses, taxibuses y minibuses', 'corto' => 'Buses', 'icono' => 'bus', 'foto' => 'img/slider/buses.jpg', 'posicion' => '15% center', 'texto_arriba' => true, 'panel_arriba' => true,
-            'frase' => 'Pasajes en línea y cotizaciones de viajes especiales enviadas en minutos.',
+            'frase' => 'Cotizaciones de viajes especiales enviadas en minutos y gestión de la flota, conductores, pagos y programación diaria.',
             'panel' => 'Salidas de hoy',
             'filas' => [['07:30 Chillán → Concepción', '38/44 asientos'], ['COT-0087 · Paseo a Termas', 'Aceptada'], ['18:00 Chillán → Talca', '12/44 asientos']],
             'aviso' => ['Cotización enviada', 'Por WhatsApp al cliente'],
