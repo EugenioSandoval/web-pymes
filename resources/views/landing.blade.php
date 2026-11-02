@@ -58,51 +58,52 @@
                 </ul>
             </div>
 
-            {{-- Ilustración del producto: panel en computador + reserva en celular --}}
-            <div class="relative" aria-hidden="true">
-                <div class="rounded-2xl bg-slate-800 p-2 shadow-2xl shadow-black/40 ring-1 ring-white/10">
-                    <div class="flex items-center gap-1.5 px-2 pb-2"><span class="size-2.5 rounded-full bg-red-400"></span><span class="size-2.5 rounded-full bg-amber-400"></span><span class="size-2.5 rounded-full bg-emerald-400"></span><span class="ml-3 flex-1 rounded-md bg-slate-700 px-3 py-0.5 text-[11px] text-slate-400">tunegocio.cl/panel</span></div>
-                    <div class="grid grid-cols-[110px_1fr] overflow-hidden rounded-lg bg-white text-tinta">
-                        <div class="hidden flex-col gap-1 bg-tinta-2 p-3 text-[11px] text-white/70 sm:flex">
-                            <span class="mb-2 flex items-center gap-1.5 font-bold text-white"><x-logo class="size-4" invertido />Panel</span>
-                            <span class="rounded bg-white/10 px-2 py-1 text-white">Inicio</span><span class="px-2 py-1">Agenda</span><span class="px-2 py-1">Clientes</span><span class="px-2 py-1">Cotizaciones</span><span class="px-2 py-1">Pedidos</span><span class="px-2 py-1">Reportes</span>
+            {{-- Slider de rubros: foto del negocio + lo que el sistema le resuelve --}}
+            <div class="slider relative" aria-roledescription="carrusel" aria-label="Ejemplos por rubro">
+                <div class="relative aspect-[4/4.7] sm:aspect-[4/3.2]">
+                    @foreach ($negocio['slider'] as $i => $slide)
+                        <div class="slide absolute inset-0 transition-opacity duration-700 @if ($i !== 0) pointer-events-none opacity-0 @endif" data-slide="{{ $i }}" aria-hidden="{{ $i === 0 ? 'false' : 'true' }}">
+                            <div class="absolute inset-0 overflow-hidden rounded-3xl bg-tinta-2 shadow-2xl shadow-black/40 ring-1 ring-white/10">
+                                <img src="{{ Formato::foto($slide['foto'], 1000) }}" alt="{{ $slide['rubro'] }}" @if ($i !== 0) loading="lazy" @endif class="size-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-tinta via-tinta/40 to-transparent"></div>
+                                <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                                    <p class="flex items-center gap-2 text-sm font-semibold text-orange-300"><x-icono :nombre="$slide['icono']" class="size-4" />{{ $slide['rubro'] }}</p>
+                                    <p class="mt-1 max-w-[18rem] text-lg font-semibold leading-snug sm:max-w-xs sm:text-xl">{{ $slide['frase'] }}</p>
+                                </div>
+                            </div>
+
+                            {{-- Mini panel del sistema --}}
+                            <div class="absolute -right-2 top-16 w-60 rounded-2xl sm:top-1/2 sm:-translate-y-1/2 bg-white p-3.5 text-tinta shadow-2xl sm:-right-8 sm:w-72" aria-hidden="true">
+                                <div class="flex items-center justify-between">
+                                    <p class="flex items-center gap-1.5 text-xs font-bold"><x-logo class="size-4" />{{ $slide['panel'] }}</p>
+                                    <span class="flex gap-1"><span class="size-2 rounded-full bg-red-300"></span><span class="size-2 rounded-full bg-amber-300"></span><span class="size-2 rounded-full bg-emerald-300"></span></span>
+                                </div>
+                                <div class="mt-2.5 space-y-1.5 text-[11px] sm:text-xs">
+                                    @foreach ($slide['filas'] as [$texto, $estado])
+                                        <div class="flex items-center justify-between gap-2 rounded-lg border border-stone-200 px-2.5 py-2">
+                                            <span class="truncate">{{ $texto }}</span>
+                                            <span @class(['shrink-0 font-semibold', 'text-naranja-oscuro' => in_array($estado, ['Nuevo', 'Nueva', 'Borrador', 'Presupuesto']), 'text-emerald-600' => ! in_array($estado, ['Nuevo', 'Nueva', 'Borrador', 'Presupuesto'])])>{{ $estado }}</span>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+                            {{-- Aviso flotante --}}
+                            <div class="absolute -top-4 left-4 flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 text-tinta shadow-xl sm:left-6" aria-hidden="true">
+                                <span class="grid size-8 place-items-center rounded-full bg-emerald-100 text-emerald-600"><x-icono nombre="check" class="size-4" /></span>
+                                <span class="text-xs"><strong class="block text-sm">{{ $slide['aviso'][0] }}</strong>{{ $slide['aviso'][1] }}</span>
+                            </div>
                         </div>
-                        <div class="col-span-2 p-4 sm:col-span-1">
-                            <p class="text-xs text-stone-500">Hola, María 👋 · Resumen de hoy</p>
-                            <div class="mt-3 grid grid-cols-3 gap-2">
-                                <div class="rounded-lg bg-stone-100 p-2.5"><p class="text-[10px] text-stone-500">Ventas del mes</p><p class="text-base font-bold">$4,2 M</p><p class="text-[10px] font-semibold text-emerald-600">▲ 18%</p></div>
-                                <div class="rounded-lg bg-naranja-suave p-2.5"><p class="text-[10px] text-stone-500">Reservas hoy</p><p class="text-base font-bold text-naranja-oscuro">14</p><p class="text-[10px] text-stone-500">3 nuevas</p></div>
-                                <div class="rounded-lg bg-stone-100 p-2.5"><p class="text-[10px] text-stone-500">Cotizaciones</p><p class="text-base font-bold">6</p><p class="text-[10px] text-stone-500">2 aceptadas</p></div>
-                            </div>
-                            <div class="mt-3 flex h-24 items-end gap-1.5 rounded-lg border border-stone-200 p-2.5">
-                                @foreach ([35, 50, 42, 60, 55, 72, 64, 80, 70, 88, 76, 95] as $alto)
-                                    <span @class(['flex-1 rounded-sm', 'bg-naranja' => $loop->last, 'bg-tinta/80' => ! $loop->last]) style="height: {{ $alto }}%"></span>
-                                @endforeach
-                            </div>
-                            <div class="mt-3 space-y-1.5 text-[11px]">
-                                <div class="flex justify-between rounded-md border border-stone-200 px-2.5 py-1.5"><span>Pedido #1042 · Torta 20 personas</span><span class="font-semibold text-naranja-oscuro">Nuevo</span></div>
-                                <div class="flex justify-between rounded-md border border-stone-200 px-2.5 py-1.5"><span>COT-0087 · Viaje a Termas</span><span class="text-emerald-600">Aceptada</span></div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
-                <div class="absolute -bottom-12 -left-4 w-40 rounded-[1.6rem] border-[5px] border-slate-800 bg-white p-3 text-tinta shadow-2xl sm:-left-10 sm:w-44">
-                    <p class="text-[10px] text-stone-500">Desde el celular</p>
-                    <p class="mt-1 text-sm font-bold">Reserva tu hora</p>
-                    <div class="mt-2 grid grid-cols-3 gap-1 text-center text-[10px]">
-                        @foreach (['10:00', '11:30', '16:00'] as $h)<span @class(['rounded-md border py-1', 'border-naranja bg-naranja text-white' => $h === '16:00', 'border-stone-200' => $h !== '16:00'])>{{ $h }}</span>@endforeach
-                    </div>
-                    <span class="mt-2 block rounded-md bg-tinta py-1.5 text-center text-[11px] font-semibold text-white">Confirmar</span>
-                </div>
-
-                <div class="absolute -right-2 -top-5 flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 text-tinta shadow-xl sm:-right-6">
-                    <span class="grid size-8 place-items-center rounded-full bg-emerald-100 text-emerald-600"><x-icono nombre="check" class="size-4" /></span>
-                    <span class="text-xs"><strong class="block text-sm">Nueva reserva</strong>desde tu web · hace 1 min</span>
-                </div>
-                <div class="absolute -bottom-6 right-4 hidden items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 text-tinta shadow-xl sm:flex">
-                    <span class="grid size-8 place-items-center rounded-full bg-naranja-suave text-naranja-oscuro"><x-icono nombre="whatsapp" class="size-4" /></span>
-                    <span class="text-xs"><strong class="block text-sm">Cotización enviada</strong>por WhatsApp al cliente</span>
+                {{-- Controles --}}
+                <div class="mt-5 flex flex-wrap items-center gap-2">
+                    @foreach ($negocio['slider'] as $i => $slide)
+                        <button type="button" data-ir="{{ $i }}" aria-label="Ver {{ $slide['rubro'] }}" @class(['punto flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition', 'bg-naranja text-white ring-naranja' => $i === 0, 'text-white/70 ring-white/20 hover:text-white' => $i !== 0])>
+                            <x-icono :nombre="$slide['icono']" class="size-3.5" /><span class="hidden sm:inline">{{ \Illuminate\Support\Str::before($slide['rubro'], ' y ') }}</span>
+                        </button>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -485,6 +486,35 @@
             document.getElementById('campo-paquete').value = boton.dataset.plan;
         });
     });
+
+    // Slider de rubros en la portada: cambia cada 5 segundos y se pausa con el mouse encima.
+    (() => {
+        const slider = document.querySelector('.slider');
+        if (!slider) return;
+        const slides = slider.querySelectorAll('.slide');
+        const puntos = slider.querySelectorAll('.punto');
+        let actual = 0, pausa = false;
+        const ir = (n) => {
+            actual = (n + slides.length) % slides.length;
+            slides.forEach((s, i) => {
+                const activo = i === actual;
+                s.classList.toggle('opacity-0', !activo);
+                s.classList.toggle('pointer-events-none', !activo);
+                s.setAttribute('aria-hidden', activo ? 'false' : 'true');
+            });
+            puntos.forEach((p, i) => {
+                const activo = i === actual;
+                ['bg-naranja', 'text-white', 'ring-naranja'].forEach(c => p.classList.toggle(c, activo));
+                ['text-white/70', 'ring-white/20'].forEach(c => p.classList.toggle(c, !activo));
+            });
+        };
+        puntos.forEach(p => p.addEventListener('click', () => ir(+p.dataset.ir)));
+        slider.addEventListener('mouseenter', () => pausa = true);
+        slider.addEventListener('mouseleave', () => pausa = false);
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setInterval(() => { if (!pausa) ir(actual + 1); }, 5000);
+        }
+    })();
 
     // Pestañas de "Antes y después".
     document.querySelectorAll('.caso-tab').forEach(tab => {

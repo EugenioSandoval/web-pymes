@@ -52,6 +52,53 @@ return [
         ],
     ],
 
+    // Slider de la portada: cada rubro con su foto y lo que el sistema le resuelve.
+    // 'filas' son [texto, estado] que aparecen en el mini panel sobre la foto.
+    'slider' => [
+        [
+            'rubro' => 'Panaderías y pastelerías', 'icono' => 'pan', 'foto' => 7447275,
+            'frase' => 'Encargos de tortas, berlines y kuchen ordenados por día de entrega.',
+            'panel' => 'Pedidos de hoy',
+            'filas' => [['Torta selva negra · 20 personas', 'Para las 17:00'], ['24 berlines de crema', 'Listo'], ['Kuchen de nuez · retiro', 'Nuevo']],
+            'aviso' => ['Nuevo encargo', 'Torta de cumpleaños · desde la web'],
+        ],
+        [
+            'rubro' => 'Salud y kinesiología', 'icono' => 'salud', 'foto' => 4266943,
+            'frase' => 'Pacientes que reservan solos y una agenda que se llena sin llamadas.',
+            'panel' => 'Agenda de hoy',
+            'filas' => [['09:00 Camila R. · Kinesiología', 'Confirmada'], ['10:00 Jorge M. · Evaluación', 'Confirmada'], ['16:00 Ana P. · Masaje', 'Nueva']],
+            'aviso' => ['Nueva reserva', 'Desde la web · hace 1 min'],
+        ],
+        [
+            'rubro' => 'Clínicas dentales', 'icono' => 'diente', 'foto' => 4269490,
+            'frase' => 'Fichas, presupuestos por etapas y control de abonos en un solo lugar.',
+            'panel' => 'Presupuestos',
+            'filas' => [['Ortodoncia · 18 cuotas', 'Aceptado'], ['Implante pieza 36', 'Enviado'], ['Limpieza + blanqueamiento', 'Borrador']],
+            'aviso' => ['Abono registrado', '$45.000 · Ortodoncia'],
+        ],
+        [
+            'rubro' => 'Buses y transfers', 'icono' => 'bus', 'foto' => 18470737,
+            'frase' => 'Pasajes en línea y cotizaciones de viajes especiales enviadas en minutos.',
+            'panel' => 'Salidas de hoy',
+            'filas' => [['07:30 Chillán → Concepción', '38/44 asientos'], ['COT-0087 · Paseo a Termas', 'Aceptada'], ['18:00 Chillán → Talca', '12/44 asientos']],
+            'aviso' => ['Cotización enviada', 'Por WhatsApp al cliente'],
+        ],
+        [
+            'rubro' => 'Talleres y servicios técnicos', 'icono' => 'herramienta', 'foto' => 6720502,
+            'frase' => 'Órdenes de trabajo, presupuestos y aviso automático cuando el auto está listo.',
+            'panel' => 'Órdenes de trabajo',
+            'filas' => [['Toyota Yaris · cambio de frenos', 'En taller'], ['Kia Rio · mantención 30.000 km', 'Listo'], ['Hyundai Accent · diagnóstico', 'Presupuesto']],
+            'aviso' => ['Cliente avisado', 'Su auto está listo para retiro'],
+        ],
+        [
+            'rubro' => 'Estética y bienestar', 'icono' => 'tijera', 'foto' => 8834029,
+            'frase' => 'Reservas por sillón, recordatorios y catálogo de servicios con precios.',
+            'panel' => 'Agenda del salón',
+            'filas' => [['11:00 Corte + color · Sillón 1', 'Confirmada'], ['12:30 Manicure · Sillón 2', 'Confirmada'], ['15:00 Alisado · Sillón 1', 'Nueva']],
+            'aviso' => ['Recordatorio enviado', 'A 6 clientas de mañana'],
+        ],
+    ],
+
     // Lo que hacemos (tarjetas de servicios).
     'servicios' => [
         ['icono' => 'monitor', 'titulo' => 'Página web profesional', 'texto' => 'Rápida, adaptada a celular y lista para aparecer en Google.'],
