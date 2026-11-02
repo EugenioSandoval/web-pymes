@@ -25,3 +25,8 @@
 }
 
 html { scroll-behavior: smooth; }
+
+/* Cinta de rubros que se desplaza sola en la página de venta */
+@keyframes desplazar { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.cinta { animation: desplazar 40s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .cinta { animation: none; } }

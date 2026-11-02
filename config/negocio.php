@@ -52,6 +52,35 @@ return [
         ],
     ],
 
+    // Lo que hacemos (tarjetas de servicios).
+    'servicios' => [
+        ['icono' => 'monitor', 'titulo' => 'Página web profesional', 'texto' => 'Rápida, adaptada a celular y lista para aparecer en Google.'],
+        ['icono' => 'carrito', 'titulo' => 'Tienda y pedidos en línea', 'texto' => 'Catálogo con precios, carrito y pedidos que llegan ordenados.'],
+        ['icono' => 'calendario', 'titulo' => 'Reservas y agenda', 'texto' => 'Tus clientes eligen día y hora; tú ves la agenda de todo el equipo.'],
+        ['icono' => 'documento', 'titulo' => 'Cotizaciones en PDF', 'texto' => 'Crea, envía y sigue cotizaciones con tu logo en minutos.'],
+        ['icono' => 'usuarios', 'titulo' => 'Clientes y trabajadores', 'texto' => 'Fichas, historial, turnos y permisos para cada persona.'],
+        ['icono' => 'grafico', 'titulo' => 'Reportes del negocio', 'texto' => 'Ventas, reservas y pendientes del mes, sin planillas.'],
+    ],
+
+    // Pasos para trabajar juntos.
+    'proceso' => [
+        ['icono' => 'mensaje', 'titulo' => 'Conversamos', 'texto' => 'Reunión gratis para entender tu negocio y lo que necesitas.'],
+        ['icono' => 'lapiz', 'titulo' => 'Diseñamos', 'texto' => 'Te mostramos cómo se verá antes de construir nada.'],
+        ['icono' => 'rayo', 'titulo' => 'Construimos', 'texto' => 'Avances semanales que puedes revisar desde tu celular.'],
+        ['icono' => 'cohete', 'titulo' => 'Lanzamos y te acompañamos', 'texto' => 'Te enseñamos a usarlo y seguimos mejorándolo cada mes.'],
+    ],
+
+    // Qué incluye la mensualidad.
+    'mensualidad' => ['Hosting y dominio', 'Certificado de seguridad (candado)', 'Respaldos diarios', 'Soporte por WhatsApp', 'Horas de cambios y mejoras', 'Actualizaciones de seguridad'],
+
+    // Garantías.
+    'garantias' => [
+        ['icono' => 'escudo', 'titulo' => 'Tus datos son tuyos', 'texto' => 'Si algún día te vas, te entregamos todo.'],
+        ['icono' => 'mensaje', 'titulo' => 'Soporte cercano', 'texto' => 'Por WhatsApp, con alguien de la zona.'],
+        ['icono' => 'documento', 'titulo' => 'Precio claro', 'texto' => 'Cotización por escrito, sin letra chica.'],
+        ['icono' => 'lapiz', 'titulo' => 'Apruebas el diseño', 'texto' => 'No construimos hasta que te guste.'],
+    ],
+
     // Preguntas de la sección "¿Tu negocio ya está en internet?". Edítalas aquí.
     'preguntas' => [
         ['icono' => 'celular', 'pregunta' => '¿Todavía no tienes tu tienda en línea?', 'respuesta' => 'Vende las 24 horas, aunque tu local esté cerrado.'],

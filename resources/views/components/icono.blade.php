@@ -14,6 +14,14 @@ $rutas = [
     'usuarios' => '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>',
     'documento' => '<path d="M6 2h9l5 5v15H6Z"/><path d="M14 2v6h6M9 13h6M9 17h6"/>',
     'celular' => '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+    'monitor' => '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+    'carrito' => '<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a1 1 0 0 0 1 .8h9.6a1 1 0 0 0 1-.8L21 7H6"/>',
+    'grafico' => '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/>',
+    'escudo' => '<path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/>',
+    'rayo' => '<path d="M13 2 4 14h7l-1 8 9-12h-7Z"/>',
+    'mensaje' => '<path d="M4 4h16v12H8l-4 4Z"/><path d="M8 9h8M8 12h5"/>',
+    'cohete' => '<path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15 6 12c1-4 4-9 12-10 0 8-5 11-9 13Z"/><circle cx="14.5" cy="8.5" r="1.5"/><path d="M6 12H3l3-4h4M12 18v3l4-3v-4"/>',
+    'lapiz' => '<path d="M4 20h4L19 9l-4-4L4 16Z"/><path d="m13 7 4 4"/>',
 ];
 @endphp
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" {{ $attributes }}>{!! $rutas[$nombre] ?? '' !!}</svg>
