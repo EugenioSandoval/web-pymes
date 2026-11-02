@@ -68,7 +68,7 @@
                                 <div class="absolute inset-0 bg-gradient-to-t from-tinta via-tinta/40 to-transparent"></div>
                                 <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                                     <p class="flex items-center gap-2 text-sm font-semibold text-orange-300"><x-icono :nombre="$slide['icono']" class="size-4" />{{ $slide['rubro'] }}</p>
-                                    <p class="mt-1 max-w-[18rem] text-lg font-semibold leading-snug sm:max-w-xs sm:text-xl">{{ $slide['frase'] }}</p>
+                                    <p class="mt-1 max-w-[18rem] text-lg font-semibold leading-snug sm:max-w-[55%] sm:text-xl">{{ $slide['frase'] }}</p>
                                 </div>
                             </div>
 
