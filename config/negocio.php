@@ -77,7 +77,7 @@ return [
             'aviso' => ['Abono registrado', '$45.000 · Ortodoncia'],
         ],
         [
-            'rubro' => 'Buses y transfers', 'icono' => 'bus', 'foto' => 21620928, 'posicion' => 'center bottom', 'panel_arriba' => true,
+            'rubro' => 'Buses, taxibuses y minibuses', 'corto' => 'Buses', 'icono' => 'bus', 'foto' => 'img/slider/buses.jpg', 'posicion' => '30% center', 'panel_arriba' => true,
             'frase' => 'Pasajes en línea y cotizaciones de viajes especiales enviadas en minutos.',
             'panel' => 'Salidas de hoy',
             'filas' => [['07:30 Chillán → Concepción', '38/44 asientos'], ['COT-0087 · Paseo a Termas', 'Aceptada'], ['18:00 Chillán → Talca', '12/44 asientos']],
@@ -171,7 +171,7 @@ return [
             'resultado' => 'Más tratamientos aceptados y pacientes que vuelven a su control.',
         ],
         [
-            'nombre' => 'Buses y transfers', 'corto' => 'Buses', 'icono' => 'bus', 'portada' => true,
+            'nombre' => 'Buses, taxibuses y minibuses', 'corto' => 'Buses', 'icono' => 'bus', 'portada' => true,
             'foto' => 18470737, // Pasajeros subiendo a un bus en el terminal
             'detalle' => 'Venta y reserva de pasajes, cotizaciones de viajes especiales enviadas al cliente, conductores y flota.',
             'antes' => ['Pasajes vendidos solo en boletería o por teléfono', 'Cotizaciones de viajes especiales (paseos, empresas, matrimonios) hechas a mano y enviadas tarde', 'Asientos sobrevendidos o buses que salen con cupos vacíos', 'Turnos de conductores en planillas de papel', 'Pasajeros que no saben si quedan asientos'],

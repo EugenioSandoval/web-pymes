@@ -101,7 +101,7 @@
                 <div class="mt-5 flex flex-wrap items-center gap-2">
                     @foreach ($negocio['slider'] as $i => $slide)
                         <button type="button" data-ir="{{ $i }}" aria-label="Ver {{ $slide['rubro'] }}" @class(['punto flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition', 'bg-naranja text-white ring-naranja' => $i === 0, 'text-white/70 ring-white/20 hover:text-white' => $i !== 0])>
-                            <x-icono :nombre="$slide['icono']" class="size-3.5" /><span class="hidden sm:inline">{{ \Illuminate\Support\Str::before($slide['rubro'], ' y ') }}</span>
+                            <x-icono :nombre="$slide['icono']" class="size-3.5" /><span class="hidden sm:inline">{{ $slide['corto'] ?? \Illuminate\Support\Str::before($slide['rubro'], ' y ') }}</span>
                         </button>
                     @endforeach
                 </div>
