@@ -73,7 +73,7 @@
                             </div>
 
                             {{-- Mini panel del sistema --}}
-                            <div class="absolute -right-2 top-16 w-60 rounded-2xl sm:top-1/2 sm:-translate-y-1/2 bg-white p-3.5 text-tinta shadow-2xl sm:-right-8 sm:w-72" aria-hidden="true">
+                            <div @class(['absolute -right-2 top-16 w-60 rounded-2xl bg-white p-3.5 text-tinta shadow-2xl sm:-right-8 sm:w-72', 'sm:top-1/2 sm:-translate-y-1/2' => empty($slide['panel_arriba']), 'sm:top-10' => ! empty($slide['panel_arriba'])]) aria-hidden="true">
                                 <div class="flex items-center justify-between">
                                     <p class="flex items-center gap-1.5 text-xs font-bold"><x-logo class="size-4" />{{ $slide['panel'] }}</p>
                                     <span class="flex gap-1"><span class="size-2 rounded-full bg-red-300"></span><span class="size-2 rounded-full bg-amber-300"></span><span class="size-2 rounded-full bg-emerald-300"></span></span>

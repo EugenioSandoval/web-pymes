@@ -77,7 +77,7 @@ return [
             'aviso' => ['Abono registrado', '$45.000 · Ortodoncia'],
         ],
         [
-            'rubro' => 'Buses y transfers', 'icono' => 'bus', 'foto' => 21620928, 'posicion' => 'center bottom',
+            'rubro' => 'Buses y transfers', 'icono' => 'bus', 'foto' => 21620928, 'posicion' => 'center bottom', 'panel_arriba' => true,
             'frase' => 'Pasajes en línea y cotizaciones de viajes especiales enviadas en minutos.',
             'panel' => 'Salidas de hoy',
             'filas' => [['07:30 Chillán → Concepción', '38/44 asientos'], ['COT-0087 · Paseo a Termas', 'Aceptada'], ['18:00 Chillán → Talca', '12/44 asientos']],
