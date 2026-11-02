@@ -77,7 +77,7 @@ return [
             'aviso' => ['Abono registrado', '$45.000 · Ortodoncia'],
         ],
         [
-            'rubro' => 'Buses, taxibuses y minibuses', 'corto' => 'Buses', 'icono' => 'bus', 'foto' => 'img/slider/buses.jpg', 'posicion' => '30% center', 'panel_arriba' => true,
+            'rubro' => 'Buses, taxibuses y minibuses', 'corto' => 'Buses', 'icono' => 'bus', 'foto' => 'img/slider/buses.jpg', 'posicion' => '15% center', 'texto_arriba' => true, 'panel_arriba' => true,
             'frase' => 'Pasajes en línea y cotizaciones de viajes especiales enviadas en minutos.',
             'panel' => 'Salidas de hoy',
             'filas' => [['07:30 Chillán → Concepción', '38/44 asientos'], ['COT-0087 · Paseo a Termas', 'Aceptada'], ['18:00 Chillán → Talca', '12/44 asientos']],

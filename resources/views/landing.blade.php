@@ -65,8 +65,8 @@
                         <div class="slide absolute inset-0 transition-opacity duration-700 @if ($i !== 0) pointer-events-none opacity-0 @endif" data-slide="{{ $i }}" aria-hidden="{{ $i === 0 ? 'false' : 'true' }}">
                             <div class="absolute inset-0 overflow-hidden rounded-3xl bg-tinta-2 shadow-2xl shadow-black/40 ring-1 ring-white/10">
                                 <img src="{{ Formato::foto($slide['foto'], 1000) }}" alt="{{ $slide['rubro'] }}" @if ($i !== 0) loading="lazy" @endif class="size-full object-cover" style="object-position: {{ $slide['posicion'] ?? 'center' }}">
-                                <div class="absolute inset-0 bg-gradient-to-t from-tinta via-tinta/40 to-transparent"></div>
-                                <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                                <div @class(['absolute inset-0 to-transparent', 'bg-gradient-to-t from-tinta via-tinta/40' => empty($slide['texto_arriba']), 'bg-gradient-to-b from-tinta/90 via-tinta/30' => ! empty($slide['texto_arriba'])])></div>
+                                <div @class(['absolute inset-x-0 p-5 sm:p-6', 'bottom-0' => empty($slide['texto_arriba']), 'top-0 pt-14 sm:pt-16' => ! empty($slide['texto_arriba'])])>
                                     <p class="flex items-center gap-2 text-sm font-semibold text-orange-300"><x-icono :nombre="$slide['icono']" class="size-4" />{{ $slide['rubro'] }}</p>
                                     <p class="mt-1 max-w-[18rem] text-lg font-semibold leading-snug sm:max-w-[55%] sm:text-xl">{{ $slide['frase'] }}</p>
                                 </div>
