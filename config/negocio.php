@@ -2,9 +2,9 @@
 
 // Datos de contacto de la página de venta. Se cambian en el archivo .env.
 return [
-    'nombre' => env('NEGOCIO_NOMBRE', 'Web Pymes Chillán'),
+    'nombre' => env('NEGOCIO_NOMBRE', 'Mostrador Digital'),
     'whatsapp' => env('NEGOCIO_WHATSAPP', '56900000000'), // formato internacional sin "+"
-    'email' => env('NEGOCIO_EMAIL', 'contacto@webpymes.cl'),
+    'email' => env('NEGOCIO_EMAIL', 'contacto@mostradordigital.cl'),
     'ciudad' => env('NEGOCIO_CIUDAD', 'Chillán, Ñuble'),
 
     // Paquetes que aparecen en la página. Precios en CLP, sin IVA.
@@ -52,13 +52,163 @@ return [
         ],
     ],
 
-    // Rubros que aparecen como ejemplos.
+    // Slider de la portada: cada rubro con su foto y lo que el sistema le resuelve.
+    // 'filas' son [texto, estado] que aparecen en el mini panel sobre la foto.
+    'slider' => [
+        [
+            'rubro' => 'Panaderías y pastelerías', 'icono' => 'pan', 'foto' => 7447275,
+            'frase' => 'Encargos de tortas, berlines y kuchen ordenados por día de entrega.',
+            'panel' => 'Pedidos de hoy',
+            'filas' => [['Torta selva negra · 20 personas', 'Para las 17:00'], ['24 berlines de crema', 'Listo'], ['Kuchen de nuez · retiro', 'Nuevo']],
+            'aviso' => ['Nuevo encargo', 'Torta de cumpleaños · desde la web'],
+        ],
+        [
+            'rubro' => 'Salud y kinesiología', 'icono' => 'salud', 'foto' => 20860624,
+            'frase' => 'Pacientes que reservan solos y una agenda que se llena sin llamadas.',
+            'panel' => 'Agenda de hoy',
+            'filas' => [['09:00 Camila R. · Kinesiología', 'Confirmada'], ['10:00 Jorge M. · Evaluación', 'Confirmada'], ['16:00 Ana P. · Masaje', 'Nueva']],
+            'aviso' => ['Nueva reserva', 'Desde la web · hace 1 min'],
+        ],
+        [
+            'rubro' => 'Clínicas dentales', 'icono' => 'diente', 'foto' => 4269490,
+            'frase' => 'Fichas, presupuestos por etapas y control de abonos en un solo lugar.',
+            'panel' => 'Presupuestos',
+            'filas' => [['Ortodoncia · 18 cuotas', 'Aceptado'], ['Implante pieza 36', 'Enviado'], ['Limpieza + blanqueamiento', 'Borrador']],
+            'aviso' => ['Abono registrado', '$45.000 · Ortodoncia'],
+        ],
+        [
+            'rubro' => 'Buses, taxibuses y minibuses', 'corto' => 'Buses', 'icono' => 'bus', 'foto' => 'img/slider/buses.jpg', 'posicion' => '15% center', 'panel_arriba' => true,
+            'frase' => 'Cotizaciones de viajes, gestión de la flota, conductores, pagos y programación diaria y más a tu medida.',
+            'panel' => 'Salidas de hoy',
+            'filas' => [['07:30 Chillán → Concepción', '38/44 asientos'], ['COT-0087 · Paseo a Termas', 'Aceptada'], ['18:00 Chillán → Talca', '12/44 asientos']],
+            'aviso' => ['Cotización enviada', 'Por WhatsApp al cliente'],
+        ],
+        [
+            'rubro' => 'Talleres y servicios técnicos', 'icono' => 'herramienta', 'foto' => 6720502,
+            'frase' => 'Órdenes de trabajo, presupuestos y aviso automático cuando el auto está listo.',
+            'panel' => 'Órdenes de trabajo',
+            'filas' => [['Toyota Yaris · cambio de frenos', 'En taller'], ['Kia Rio · mantención 30.000 km', 'Listo'], ['Hyundai Accent · diagnóstico', 'Presupuesto']],
+            'aviso' => ['Cliente avisado', 'Su auto está listo para retiro'],
+        ],
+        [
+            'rubro' => 'Estética y bienestar', 'icono' => 'tijera', 'foto' => 8834029,
+            'frase' => 'Reservas por sillón, recordatorios y catálogo de servicios con precios.',
+            'panel' => 'Agenda del salón',
+            'filas' => [['11:00 Corte + color · Sillón 1', 'Confirmada'], ['12:30 Manicure · Sillón 2', 'Confirmada'], ['15:00 Alisado · Sillón 1', 'Nueva']],
+            'aviso' => ['Recordatorio enviado', 'A 6 clientas de mañana'],
+        ],
+    ],
+
+    // Lo que hacemos (tarjetas de servicios).
+    'servicios' => [
+        ['icono' => 'monitor', 'titulo' => 'Página web profesional', 'texto' => 'Rápida, adaptada a celular y lista para aparecer en Google.'],
+        ['icono' => 'carrito', 'titulo' => 'Tienda y pedidos en línea', 'texto' => 'Catálogo con precios, carrito y pedidos que llegan ordenados.'],
+        ['icono' => 'calendario', 'titulo' => 'Reservas y agenda', 'texto' => 'Tus clientes eligen día y hora; tú ves la agenda de todo el equipo.'],
+        ['icono' => 'documento', 'titulo' => 'Cotizaciones en PDF', 'texto' => 'Crea, envía y sigue cotizaciones con tu logo en minutos.'],
+        ['icono' => 'usuarios', 'titulo' => 'Clientes y trabajadores', 'texto' => 'Fichas, historial, turnos y permisos para cada persona.'],
+        ['icono' => 'grafico', 'titulo' => 'Reportes del negocio', 'texto' => 'Ventas, reservas y pendientes del mes, sin planillas.'],
+    ],
+
+    // Pasos para trabajar juntos.
+    'proceso' => [
+        ['icono' => 'mensaje', 'titulo' => 'Conversamos', 'texto' => 'Reunión gratis para entender tu negocio y lo que necesitas.'],
+        ['icono' => 'lapiz', 'titulo' => 'Diseñamos', 'texto' => 'Te mostramos cómo se verá antes de construir nada.'],
+        ['icono' => 'rayo', 'titulo' => 'Construimos', 'texto' => 'Avances semanales que puedes revisar desde tu celular.'],
+        ['icono' => 'cohete', 'titulo' => 'Lanzamos y te acompañamos', 'texto' => 'Te enseñamos a usarlo y seguimos mejorándolo cada mes.'],
+    ],
+
+    // Qué incluye la mensualidad.
+    'mensualidad' => ['Hosting y dominio', 'Certificado de seguridad (candado)', 'Respaldos diarios', 'Soporte por WhatsApp', 'Horas de cambios y mejoras', 'Actualizaciones de seguridad'],
+
+    // Garantías.
+    'garantias' => [
+        ['icono' => 'escudo', 'titulo' => 'Tus datos son tuyos', 'texto' => 'Si algún día te vas, te entregamos todo.'],
+        ['icono' => 'mensaje', 'titulo' => 'Soporte cercano', 'texto' => 'Por WhatsApp, con alguien de la zona.'],
+        ['icono' => 'documento', 'titulo' => 'Precio claro', 'texto' => 'Cotización por escrito, sin letra chica.'],
+        ['icono' => 'lapiz', 'titulo' => 'Apruebas el diseño', 'texto' => 'No construimos hasta que te guste.'],
+    ],
+
+    // Preguntas de la sección "¿Tu negocio ya está en internet?". Edítalas aquí.
+    'preguntas' => [
+        ['icono' => 'celular', 'pregunta' => '¿Todavía no tienes tu tienda en línea?', 'respuesta' => 'Vende las 24 horas, aunque tu local esté cerrado.'],
+        ['icono' => 'hoja', 'pregunta' => '¿Te buscan en Google y no encuentran tus productos ni servicios?', 'respuesta' => 'Muéstralos con fotos, precios y un botón directo a tu WhatsApp.'],
+        ['icono' => 'documento', 'pregunta' => '¿Las cotizaciones te llegan por todos lados y algunas se pierden?', 'respuesta' => 'Tus clientes cotizan en tu web y tú las respondes desde un solo panel.'],
+        ['icono' => 'check', 'pregunta' => '¿Anotas los pedidos en un cuaderno o en el chat?', 'respuesta' => 'Recibe, ordena y sigue cada pedido hasta la entrega.'],
+        ['icono' => 'calendario', 'pregunta' => '¿Tus clientes tienen que llamarte para pedir una hora?', 'respuesta' => 'Que reserven en línea y reciban su confirmación al instante.'],
+        ['icono' => 'usuarios', 'pregunta' => '¿No sabes cuánto vendiste este mes sin sacar la calculadora?', 'respuesta' => 'Mira ventas, clientes y pendientes en reportes simples.'],
+    ],
+
+    // Fotos de los rubros. Cada "foto" puede ser:
+    //  - un número: el ID de una foto de Pexels (pexels.com/photo/...-ID/), gratis para uso comercial, o
+    //  - una ruta dentro de public/, por ejemplo 'img/rubros/panaderia.jpg', para usar tus propias imágenes.
+    'foto_portada' => 4473496, // Cajera usando la pantalla del mostrador (foto horizontal)
+
+    // Rubros: los que tienen 'portada' => true aparecen con foto al lado del título (máximo 6).
+    // 'antes', 'ahora' y 'resultado' alimentan la sección "Antes y después".
     'rubros' => [
-        ['nombre' => 'Salud', 'detalle' => 'Kinesiología, psicología, nutrición y consultas: reserva de horas, fichas y recordatorios.', 'icono' => 'salud'],
-        ['nombre' => 'Transporte de pasajeros', 'detalle' => 'Buses y transfers: horarios, reserva de pasajes, conductores y flota.', 'icono' => 'bus'],
-        ['nombre' => 'Servicios técnicos', 'detalle' => 'Talleres y mantenciones: cotizaciones, órdenes de trabajo e historial.', 'icono' => 'herramienta'],
-        ['nombre' => 'Estética y bienestar', 'detalle' => 'Peluquerías, barberías y spa: agenda en línea y catálogo de servicios.', 'icono' => 'tijera'],
-        ['nombre' => 'Panaderías y pastelerías', 'detalle' => 'Catálogo, pedidos por encargo para eventos y despacho.', 'icono' => 'pan'],
-        ['nombre' => 'Turismo y agro', 'detalle' => 'Cabañas y productores de Ñuble: reservas, catálogo y cotización por volumen.', 'icono' => 'hoja'],
+        [
+            'nombre' => 'Panaderías y pastelerías', 'corto' => 'Panaderías', 'icono' => 'pan', 'portada' => true,
+            'foto' => 36445004,
+            'detalle' => 'Pedidos por encargo para cumpleaños y eventos, catálogo y despacho.',
+            'antes' => ['Encargos de tortas anotados en un cuaderno o en el WhatsApp personal', 'Pedidos olvidados o duplicados el día del evento', 'Clientes que llaman para preguntar si queda pan o a qué hora sale', 'Sin saber qué productos se venden más'],
+            'ahora' => ['Catálogo en línea con pedidos y fecha de entrega', 'Lista de producción del día armada sola', 'Aviso al cliente cuando su pedido está listo', 'Ventas por producto a la vista en el panel'],
+            'resultado' => 'Más encargos para eventos y ninguna torta olvidada.',
+        ],
+        [
+            'nombre' => 'Salud y kinesiología', 'corto' => 'Salud', 'icono' => 'salud', 'portada' => true,
+            'foto' => 4266943, // Profesional mostrando una tablet al paciente
+            'detalle' => 'Kinesiología, psicología, nutrición y consultas: reserva de horas, fichas y recordatorios.',
+            'antes' => ['Recepción todo el día al teléfono agendando horas', 'Pacientes que no llegan y dejan horas vacías', 'Fichas en papel o en Excel repartidas en varios computadores', 'Planes y presupuestos cotizados a mano'],
+            'ahora' => ['Reservas desde la web las 24 horas', 'Recordatorio al paciente antes de su hora', 'La ficha de cada paciente en un solo lugar', 'Cotizaciones en PDF en un minuto'],
+            'resultado' => 'Agenda más llena y recepción libre para atender.',
+        ],
+        [
+            'nombre' => 'Clínicas dentales', 'corto' => 'Dental', 'icono' => 'diente', 'portada' => true,
+            'foto' => 6627325,
+            'detalle' => 'Agenda por sillón, presupuestos de tratamiento por etapas y control de abonos.',
+            'antes' => ['Presupuestos de tratamiento escritos a mano que el paciente pierde', 'Tratamientos largos sin seguimiento de cuántas sesiones faltan', 'Abonos y saldos anotados en un cuaderno', 'Controles de limpieza que nadie recuerda agendar'],
+            'ahora' => ['Presupuesto en PDF por etapas, listo para enviar', 'Plan de tratamiento con sesiones hechas y pendientes', 'Abonos y saldos de cada paciente al día', 'Aviso automático del próximo control'],
+            'resultado' => 'Más tratamientos aceptados y pacientes que vuelven a su control.',
+        ],
+        [
+            'nombre' => 'Buses, taxibuses y minibuses', 'corto' => 'Buses', 'icono' => 'bus', 'portada' => true,
+            'foto' => 18470737, // Pasajeros subiendo a un bus en el terminal
+            'detalle' => 'Venta y reserva de pasajes, cotizaciones de viajes especiales enviadas al cliente, conductores y flota.',
+            'antes' => ['Pasajes vendidos solo en boletería o por teléfono', 'Cotizaciones de viajes especiales (paseos, empresas, matrimonios) hechas a mano y enviadas tarde', 'Asientos sobrevendidos o buses que salen con cupos vacíos', 'Turnos de conductores en planillas de papel', 'Pasajeros que no saben si quedan asientos'],
+            'ahora' => ['Venta y reserva de pasajes en línea, con elección de asiento', 'Cotizaciones de viajes especiales generadas en minutos y enviadas al cliente por correo o WhatsApp', 'Cupos actualizados al instante', 'Turnos de conductores y estado de la flota en el panel', 'Confirmación automática al pasajero'],
+            'resultado' => 'Buses más llenos, más viajes especiales cerrados y menos llamadas.',
+        ],
+        [
+            'nombre' => 'Talleres y servicios técnicos', 'corto' => 'Talleres', 'icono' => 'herramienta', 'portada' => true,
+            'foto' => 4116198,
+            'detalle' => 'Cotizaciones, órdenes de trabajo e historial por cliente o patente.',
+            'antes' => ['Presupuestos a mano que se pierden', 'Clientes que llaman a preguntar si su auto está listo', 'Sin historial de lo que se le hizo a cada vehículo', 'Mantenciones que nadie le recuerda al cliente'],
+            'ahora' => ['Cotización en PDF enviada por WhatsApp', 'Estado de cada orden: recibido, en reparación, listo', 'Historial por patente', 'Aviso automático de la próxima mantención'],
+            'resultado' => 'Clientes que vuelven y menos tiempo al teléfono.',
+        ],
+        [
+            'nombre' => 'Estética y bienestar', 'corto' => 'Estética', 'icono' => 'tijera', 'portada' => true,
+            'foto' => 7755223,
+            'detalle' => 'Peluquerías, barberías y spa: agenda en línea y catálogo de servicios.',
+            'antes' => ['Horas pedidas por Instagram a cualquier hora del día', 'Clientas y clientes que no llegan y nadie lo anota', 'Una agenda en papel que solo ve una persona'],
+            'ahora' => ['Reserva en línea con servicios y precios', 'Recordatorio un día antes', 'Agenda por profesional que todo el equipo puede ver'],
+            'resultado' => 'Menos horas perdidas y más tiempo para atender.',
+        ],
+        [
+            'nombre' => 'Cabañas y turismo rural', 'corto' => 'Turismo', 'icono' => 'hoja', 'portada' => false,
+            'foto' => 7212851,
+            'detalle' => 'Reservas con calendario de disponibilidad y abonos en línea.',
+            'antes' => ['Reservas por teléfono y transferencias que hay que revisar una por una', 'Fechas cruzadas entre dos personas que reservan lo mismo', 'Temporada baja sin forma de ofrecer promociones'],
+            'ahora' => ['Calendario de disponibilidad en la web', 'Reserva con abono y confirmación automática', 'Lista de clientes para avisar promociones'],
+            'resultado' => 'Menos reservas cruzadas y más ocupación en temporada baja.',
+        ],
+    ],
+
+    // Beneficios generales que aparecen bajo "Antes y después".
+    'beneficios' => [
+        ['titulo' => 'Vende más', 'texto' => 'Te encuentran en Google y te compran o reservan a cualquier hora, no solo cuando contestas.'],
+        ['titulo' => 'Organízate mejor', 'texto' => 'Clientes, equipo, agenda y cotizaciones en un solo lugar, desde el celular.'],
+        ['titulo' => 'No pierdas clientes', 'texto' => 'Recordatorios y seguimiento para que nadie quede sin respuesta.'],
+        ['titulo' => 'Gana tiempo', 'texto' => 'Menos llamadas, menos cuadernos y menos planillas que cuadrar.'],
     ],
 ];
