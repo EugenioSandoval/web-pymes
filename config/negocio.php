@@ -63,7 +63,7 @@ return [
             'aviso' => ['Nuevo encargo', 'Torta de cumpleaños · desde la web'],
         ],
         [
-            'rubro' => 'Salud y kinesiología', 'icono' => 'salud', 'foto' => 4266943,
+            'rubro' => 'Salud y kinesiología', 'icono' => 'salud', 'foto' => 20860624,
             'frase' => 'Pacientes que reservan solos y una agenda que se llena sin llamadas.',
             'panel' => 'Agenda de hoy',
             'filas' => [['09:00 Camila R. · Kinesiología', 'Confirmada'], ['10:00 Jorge M. · Evaluación', 'Confirmada'], ['16:00 Ana P. · Masaje', 'Nueva']],
@@ -77,7 +77,7 @@ return [
             'aviso' => ['Abono registrado', '$45.000 · Ortodoncia'],
         ],
         [
-            'rubro' => 'Buses y transfers', 'icono' => 'bus', 'foto' => 18470737,
+            'rubro' => 'Buses y transfers', 'icono' => 'bus', 'foto' => 5229277,
             'frase' => 'Pasajes en línea y cotizaciones de viajes especiales enviadas en minutos.',
             'panel' => 'Salidas de hoy',
             'filas' => [['07:30 Chillán → Concepción', '38/44 asientos'], ['COT-0087 · Paseo a Termas', 'Aceptada'], ['18:00 Chillán → Talca', '12/44 asientos']],
