@@ -91,7 +91,7 @@
                             <div class="absolute inset-0 overflow-hidden rounded-[2.5rem] bg-tinta shadow-2xl shadow-tinta/25 ring-8 ring-white">
                                 <img src="{{ Formato::foto($slide['foto'], 1000) }}" alt="{{ $slide['rubro'] }}" @if ($i !== 0) loading="lazy" @endif class="size-full object-cover" style="object-position: {{ $slide['posicion'] ?? 'center' }}">
                                 <div class="absolute inset-0 bg-gradient-to-t from-tinta/90 via-tinta/10 to-transparent"></div>
-                                <div class="absolute inset-x-0 bottom-0 p-5 pr-24 text-white sm:p-7 sm:pb-28 sm:pr-40 lg:pr-28">
+                                <div class="absolute inset-x-0 bottom-0 p-5 pr-24 text-white sm:p-7 sm:pb-36 sm:pr-40 lg:pr-28">
                                     <p class="inline-flex items-center gap-1.5 rounded-full bg-naranja px-2.5 py-1 text-xs font-bold"><x-icono :nombre="$slide['icono']" class="size-3.5" />{{ $slide['rubro'] }}</p>
                                     <p class="mt-2 text-lg font-semibold leading-snug sm:text-xl">{{ $slide['frase'] }}</p>
                                 </div>
