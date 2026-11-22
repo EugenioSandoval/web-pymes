@@ -272,7 +272,7 @@
                     </div>
                 </div>
                 {{-- Tarjeta flotante: agenda --}}
-                <div class="flotar absolute -left-6 bottom-16 rounded-2xl bg-white p-3.5 shadow-2xl ring-1 ring-stone-100 sm:-left-20">
+                <div class="flotar absolute -bottom-6 -left-6 rounded-2xl bg-white p-3.5 shadow-2xl ring-1 ring-stone-100 sm:-left-20">
                     <p class="text-[11px] font-semibold text-stone-500">Agenda · mañana</p>
                     <p class="mt-1 flex items-center gap-2 text-sm font-bold text-tinta"><span class="size-2.5 rounded-full bg-emerald-500"></span>10:00 Luna · Control</p>
                     <p class="text-xs text-emerald-600">Agendada por WhatsApp</p>
