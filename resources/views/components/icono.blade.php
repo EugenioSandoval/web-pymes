@@ -21,7 +21,16 @@ $rutas = [
     'rayo' => '<path d="M13 2 4 14h7l-1 8 9-12h-7Z"/>',
     'mensaje' => '<path d="M4 4h16v12H8l-4 4Z"/><path d="M8 9h8M8 12h5"/>',
     'cohete' => '<path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15 6 12c1-4 4-9 12-10 0 8-5 11-9 13Z"/><circle cx="14.5" cy="8.5" r="1.5"/><path d="M6 12H3l3-4h4M12 18v3l4-3v-4"/>',
-    'lapiz' => '<path d="M4 20h4L19 9l-4-4L4 16Z"/><path d="m13 7 4 4"/>',
+    'huella' => '<circle cx="5.5" cy="10" r="2"/><circle cx="9.5" cy="5.5" r="2"/><circle cx="14.5" cy="5.5" r="2"/><circle cx="18.5" cy="10" r="2"/><path d="M12 12c-3 0-6 4.5-6 7 0 1.5 1.2 2 2.5 2 1.5 0 2.3-.8 3.5-.8s2 .8 3.5.8c1.3 0 2.5-.5 2.5-2 0-2.5-3-7-6-7Z"/>',
+    'gota' => '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/><path d="M9 14a3 3 0 0 0 3 3"/>',
+    'campana' => '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4Z"/><path d="M10 21h4"/>',
+    'auto' => '<path d="M3 16v-4l2-5h14l2 5v4Z"/><path d="M3 12h18"/><circle cx="7" cy="16.5" r="1.8"/><circle cx="17" cy="16.5" r="1.8"/>',
+    'tarjeta' => '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>',
+    'estrella' => '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9Z"/>',
+    'brillo' => '<path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="M12 8.5 13.2 11 15.5 12l-2.3 1-1.2 2.5-1.2-2.5L8.5 12l2.3-1Z"/>',
+    'chispa' => '<path d="M12 3c.5 4.5 2.5 6.5 7 7-4.5.5-6.5 2.5-7 7-.5-4.5-2.5-6.5-7-7 4.5-.5 6.5-2.5 7-7Z"/><path d="M19 3v4M17 5h4"/>',
+    'flecha' => '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    'lapiz' =>'<path d="M4 20h4L19 9l-4-4L4 16Z"/><path d="m13 7 4 4"/>',
 ];
 @endphp
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" {{ $attributes }}>{!! $rutas[$nombre] ?? '' !!}</svg>
